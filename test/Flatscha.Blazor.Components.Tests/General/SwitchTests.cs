@@ -1,4 +1,6 @@
-﻿namespace Flatscha.Blazor.Components.Tests.General
+﻿using Flatscha.Blazor.Components.General;
+
+namespace Flatscha.Blazor.Components.Tests.General
 {
     public class SwitchTests : TestContext
     {
