@@ -1,0 +1,53 @@
+﻿
+* {
+    /*Colors*/
+    --flatscha-primary-color: rgb(16, 100, 0);
+    --flatscha-primary-color-transparent: rgba(16, 100, 0, 0.1);
+    --flatscha-primary-color-gradient: linear-gradient(to right, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
+    --flatscha-primary-color-gradient-left: linear-gradient(to left, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
+    --flatscha-primary-color-box-shadow: 0 0 0.5em var(--flatscha-primary-color);
+    --flatscha-color-scheme: dark;
+    /*Background*/
+    --flatscha-bg: rgb(24, 27, 31);
+    --flatscha-bg-transparent: rgba(24, 27, 31, 0.1);
+    /*Font*/
+    --flatscha-font-color: rgb(204, 204, 220);
+    --flatscha-font-color-transparent: rgba(255,255,255,0.1);
+}
+
+.flatscha {
+    color: var(--flatscha-font-color);
+    color-scheme: var(--flatscha-color-scheme);
+}
+
+    .flatscha input,
+    .flatscha select {
+        color-scheme: var(--flatscha-color-scheme);
+        accent-color: var(--flatscha-primary-color) !important;
+    }
+
+    .flatscha .btn {
+        border: 1px solid transparent;
+        border-radius: 0.25rem;
+        text-decoration: none;
+        user-select: none;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+    }
+
+        .flatscha .btn:active,
+        .flatscha .btn:focus {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .flatscha .btn.btn-primary {
+            color: var(--flatscha-font-color);
+            background-color: var(--flatscha-primary-color);
+            border-color: var(--flatscha-primary-color);
+        }
+
+        .flatscha .btn.btn-cancel {
+            color: var(--flatscha-font-color);
+            border: 1px solid var(--flatscha-primary-color);
+        }

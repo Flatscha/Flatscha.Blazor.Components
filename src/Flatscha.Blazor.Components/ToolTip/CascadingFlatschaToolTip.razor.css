@@ -1,0 +1,14 @@
+﻿.tooltip {
+    display: none;
+    position: absolute;
+    width: max-content;
+    background-color: var(--flatscha-bg);
+    border: 1px solid var(--flatscha-font-color);
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    z-index: 900;
+}
+
+    .tooltip.show {
+        display: initial;
+    }

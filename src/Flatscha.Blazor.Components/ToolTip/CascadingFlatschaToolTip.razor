@@ -1,0 +1,14 @@
+﻿<CascadingValue Value="this">
+    @ChildContent
+</CascadingValue>
+
+<div class="flatscha tooltip @(this._showToolTip ? "show" : "")" @ref=this._toolTip>
+    @if (string.IsNullOrWhiteSpace(this._text))
+    {
+        @this._toolTipContent
+    }
+    else
+    {
+        @this._text
+    }
+</div>
