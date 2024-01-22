@@ -1,0 +1,12 @@
+﻿.flatscha-icon-text {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 0.5rem;
+    align-items: center;
+}
+
+    .flatscha-icon-text .flatscha-icon-text-content {
+    }
+
+    .flatscha-icon-text ::deep svg {
+    }

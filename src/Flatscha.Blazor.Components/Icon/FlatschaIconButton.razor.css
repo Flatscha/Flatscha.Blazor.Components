@@ -1,0 +1,10 @@
+﻿.flatscha-icon-button {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    aspect-ratio: 1/1;
+    background-color: var(--flatscha-primary-color);
+}
+
+    .flatscha-icon-button ::deep svg {
+    }

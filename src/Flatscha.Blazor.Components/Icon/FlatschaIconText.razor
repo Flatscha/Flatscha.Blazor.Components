@@ -1,0 +1,16 @@
+﻿<div class="flatscha flatscha-icon-text">
+    <FlatschaIcon FAClass="@this.FAClass" />
+
+    <div class="flatscha flatscha-icon-text-content">
+        @if (string.IsNullOrWhiteSpace(this.Text))
+        {
+            @this.ChildContent
+        }
+        else
+        {
+            @this.Text
+        }
+    </div>
+</div>
+
+

@@ -8,5 +8,10 @@
 Welcome to your new app.
 
 <FlatschaToolTip Text="This is a test tooltip.">
-    <button class="btn btn-primary">Test</button>
+    <FlatschaIconButton FAClass="@this._icon" OnClick="this.ChangeIcon" />
 </FlatschaToolTip>
+
+@code {
+    private string _icon = "house";
+    private void ChangeIcon() => this._icon = this._icon == "house" ? "user" : "house";
+}
