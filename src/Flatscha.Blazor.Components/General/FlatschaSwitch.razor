@@ -1,7 +1,7 @@
 ﻿<div class="flatscha flatscha-toggle-switch @(this.Checked ? "checked" : "")" @onclick="this.Clicked">
     <div class="slider" />
-    @if (!string.IsNullOrWhiteSpace(this.Text))
+    @if (this.ChildContent is not null)
     {
-        <div class="switch-label">@this.Text</div>
+        <div class="switch-label">@this.ChildContent</div>
     }
 </div>

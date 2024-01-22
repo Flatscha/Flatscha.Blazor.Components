@@ -17,7 +17,7 @@ namespace Flatscha.Blazor.Components.Tests.General
 
             var cut = RenderComponent<FlatschaSwitch>(parameters =>
             {
-                parameters.Add(p => p.Text, text);
+                parameters.AddChildContent(text);
             });
 
             var wrapper = cut.Find(".flatscha-toggle-switch");

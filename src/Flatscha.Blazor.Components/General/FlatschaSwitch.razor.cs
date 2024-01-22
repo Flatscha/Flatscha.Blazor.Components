@@ -19,7 +19,7 @@ namespace Flatscha.Blazor.Components.General
 
         [Parameter] public EventCallback<bool> CheckedChanged { get; set; }
 
-        [Parameter] public string Text { get; set; }
+        [Parameter] public RenderFragment? ChildContent { get; set; }
 
         private async Task Clicked()
         {
