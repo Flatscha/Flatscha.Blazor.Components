@@ -1,0 +1,61 @@
+﻿.flatscha-alert {
+    width: 100%;
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-gap: 1rem;
+    align-items: center;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 1rem 1.5rem;
+}
+
+    .flatscha-alert svg {
+    }
+
+    .flatscha-alert.alert-normal {
+        background: var(--dionysys-font-color-transparent);
+        color: var(--dionysys-font-color);
+    }
+
+        .flatscha-alert.alert-normal ::deep svg {
+            fill: var(--dionysys-font-color);
+        }
+
+    .flatscha-alert.alert-info {
+        background: var(--dionysys-blue-transparent);
+        color: var(--dionysys-blue);
+    }
+
+        .flatscha-alert.alert-info ::deep svg {
+            fill: var(--dionysys-blue);
+        }
+
+    .flatscha-alert.alert-success {
+        background: var(--forced-smartui-green-transparent);
+        color: var(--forced-smartui-green);
+    }
+
+        .flatscha-alert.alert-success ::deep svg {
+            fill: var(--forced-smartui-green);
+        }
+
+    .flatscha-alert.alert-warn {
+        background: var(--dionysys-orange-transparent);
+        color: var(--dionysys-orange);
+    }
+
+        .flatscha-alert.alert-warn ::deep svg {
+            fill: var(--dionysys-orange);
+        }
+
+    .flatscha-alert.alert-error {
+        background: var(--dionysys-red-transparent);
+        color: var(--dionysys-red);
+    }
+
+        .flatscha-alert.alert-error ::deep svg {
+            fill: var(--dionysys-red);
+        }
+
+    .flatscha-alert .alert-text {
+    }
