@@ -1,6 +1,4 @@
-﻿using Flatscha.Blazor.Components.Button;
-
-namespace Flatscha.Blazor.Components.Tests.Button
+﻿namespace Flatscha.Blazor.Components.Tests.General
 {
     public class SwitchTests : TestContext
     {
@@ -13,7 +11,7 @@ namespace Flatscha.Blazor.Components.Tests.Button
         [Fact]
         public void Create()
         {
-            var text = this._fixture.Create<string>();
+            var text = _fixture.Create<string>();
 
             var cut = RenderComponent<FlatschaSwitch>(parameters =>
             {

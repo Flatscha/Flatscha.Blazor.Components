@@ -1,4 +1,4 @@
-namespace Flatscha.Blazor.Components.Button
+namespace Flatscha.Blazor.Components.General
 {
     public partial class FlatschaSwitch
     {
