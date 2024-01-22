@@ -2,7 +2,7 @@ namespace Flatscha.Blazor.Components.Pagination
 {
     public partial class FlatschaAccordionItem
     {
-        [CascadingParameter] protected FlatschaAccordion Parent { get; set; }
+        [CascadingParameter] public FlatschaAccordion Parent { get; set; }
 
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
