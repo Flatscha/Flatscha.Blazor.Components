@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4A63196E-012
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8EC0C304-CA0B-4357-BF05-B09B98900BB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flatscha.Blazor.TestApp", "test\Flatscha.Blazor.TestApp\Flatscha.Blazor.TestApp.csproj", "{5B828BD9-63CC-4E41-8DEF-382BCFDC33F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flatscha.Blazor.TestApp", "test\Flatscha.Blazor.TestApp\Flatscha.Blazor.TestApp.csproj", "{5B828BD9-63CC-4E41-8DEF-382BCFDC33F9}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Flatscha.Blazor.Components.Tests", "test\Flatscha.Blazor.Components.Tests\Flatscha.Blazor.Components.Tests.csproj", "{C1709DF5-790C-4C14-88E9-5D75A8C79F86}"
 EndProject

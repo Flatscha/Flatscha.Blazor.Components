@@ -1,8 +1,5 @@
-﻿using AutoFixture;
-using Flatscha.Blazor.Components.Contracts.Interfaces.Components;
+﻿using Flatscha.Blazor.Components.Contracts.Interfaces.Components;
 using Flatscha.Blazor.Components.ToolTip;
-using Microsoft.AspNetCore.Components;
-using Moq;
 
 namespace Flatscha.Blazor.Components.Tests.ToolTip
 {

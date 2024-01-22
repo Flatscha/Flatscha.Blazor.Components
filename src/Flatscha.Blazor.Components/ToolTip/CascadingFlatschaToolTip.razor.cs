@@ -1,4 +1,3 @@
-using Flatscha.Blazor.Components.Contracts.Interfaces.Components;
 using Microsoft.JSInterop;
 
 namespace Flatscha.Blazor.Components.ToolTip
