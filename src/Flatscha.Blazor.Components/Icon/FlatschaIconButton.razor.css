@@ -4,6 +4,7 @@
     justify-items: center;
     aspect-ratio: 1/1;
     background-color: var(--flatscha-primary-color);
+    cursor: pointer;
 }
 
     .flatscha-icon-button ::deep svg {

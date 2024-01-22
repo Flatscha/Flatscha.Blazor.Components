@@ -7,11 +7,14 @@
 
 Welcome to your new app.
 
-<FlatschaToolTip Text="This is a test tooltip.">
-    <FlatschaIconButton FAClass="@this._icon" OnClick="this.ChangeIcon" />
-</FlatschaToolTip>
-
-<FlatschaSwitch Text="Test" Checked="true" />
+<FlatschaAccordion>
+    <FlatschaAccordionItem Name="Test">
+        erstes
+    </FlatschaAccordionItem>
+    <FlatschaAccordionItem Name="Test2">
+        zweites
+    </FlatschaAccordionItem>
+</FlatschaAccordion>
 
 @code {
     private string _icon = "house";

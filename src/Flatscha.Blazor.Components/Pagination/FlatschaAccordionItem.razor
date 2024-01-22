@@ -1,0 +1,9 @@
+﻿<div class="flatscha-accordion-item  @(this.Parent.ActiveItem == this ? "active" : "")">
+    <div class="flatscha-accordion-item-header" @onclick="this.SetActive">
+        <div class="flatscha-accordion-item-header-text">@this.Name</div>
+        <FlatschaIconButton FAClass="angle-right" />
+    </div>
+    <div class="flatscha-accordion-item-content">@this.ChildContent</div>
+</div>
+
+

@@ -1,0 +1,38 @@
+﻿.flatscha-accordion-item {
+}
+
+    .flatscha-accordion-item .flatscha-accordion-item-header {
+        height: max-content;
+        display: grid;
+        grid-template-columns: auto max-content;
+        align-items: center;
+        cursor: pointer;
+        border-bottom: 1px solid var(--flatscha-primary-color-transparent);
+        padding: 0.5rem;
+        background: var(--flatscha-font-color-transparent);
+        transition: all ease-in-out 0.25s;
+    }
+
+        .flatscha-accordion-item .flatscha-accordion-item-header .flatscha-accordion-item-header-text {
+        }
+
+        .flatscha-accordion-item .flatscha-accordion-item-header ::deep .flatscha-icon-button {
+            width: 2rem;
+            transition: all ease-in-out 0.25s;
+        }
+
+    .flatscha-accordion-item.active .flatscha-accordion-item-header ::deep .flatscha-icon-button {
+        transform: rotate(90deg);
+    }
+
+    .flatscha-accordion-item .flatscha-accordion-item-content {
+        height: 0;
+        overflow: hidden;
+        padding: 0 1rem;
+        transition: all linear 0.25s;
+    }
+
+    .flatscha-accordion-item.active .flatscha-accordion-item-content {
+        height: max-content;
+        padding: 0.5rem 1rem;
+    }
