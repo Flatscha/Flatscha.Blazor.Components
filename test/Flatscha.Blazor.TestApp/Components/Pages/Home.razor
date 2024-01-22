@@ -11,6 +11,8 @@ Welcome to your new app.
     <FlatschaIconButton FAClass="@this._icon" OnClick="this.ChangeIcon" />
 </FlatschaToolTip>
 
+<FlatschaSwitch Label="Test" Checked="true" />
+
 @code {
     private string _icon = "house";
     private void ChangeIcon() => this._icon = this._icon == "house" ? "user" : "house";

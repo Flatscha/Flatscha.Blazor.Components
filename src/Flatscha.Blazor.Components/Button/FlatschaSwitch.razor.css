@@ -1,0 +1,46 @@
+﻿
+.flatscha-toggle-switch {
+    display: grid;
+    position: relative;
+    width: max-content;
+    height: 1.5em;
+    align-items: center;
+    grid-template-columns: max-content max-content;
+    grid-gap: 0.5rem;
+}
+
+    .flatscha-toggle-switch .slider {
+        cursor: pointer;
+        width: 2.5em;
+        height: 1.5em;
+        background-color: var(--flatscha-font-color);
+        transition: .4s;
+        border-radius: 0.75em;
+    }
+
+        .flatscha-toggle-switch .slider:before {
+            position: absolute;
+            content: "";
+            height: 1em;
+            width: 1em;
+            left: 0.25em;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+
+    .flatscha-toggle-switch .switch-label {
+        width: max-content;
+    }
+
+    .flatscha-toggle-switch.checked .slider {
+        background-color: var(--flatscha-primary-color);
+    }
+
+        .flatscha-toggle-switch.checked .slider:before {
+            left: 1.25em;
+        }
