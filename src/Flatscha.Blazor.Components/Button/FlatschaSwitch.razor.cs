@@ -19,7 +19,7 @@ namespace Flatscha.Blazor.Components.Button
 
         [Parameter] public EventCallback<bool> CheckedChanged { get; set; }
 
-        [Parameter] public string Label { get; set; }
+        [Parameter] public string Text { get; set; }
 
         private async Task Clicked()
         {
