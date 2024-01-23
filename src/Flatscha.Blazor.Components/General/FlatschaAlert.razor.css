@@ -13,21 +13,21 @@
     }
 
     .flatscha-alert.alert-normal {
-        background: var(--dionysys-font-color-transparent);
-        color: var(--dionysys-font-color);
+        background: var(--flatscha-font-color-transparent);
+        color: var(--flatscha-font-color);
     }
 
         .flatscha-alert.alert-normal ::deep svg {
-            fill: var(--dionysys-font-color);
+            fill: var(--flatscha-font-color);
         }
 
     .flatscha-alert.alert-info {
-        background: var(--dionysys-blue-transparent);
-        color: var(--dionysys-blue);
+        background: var(--flatscha-blue-transparent);
+        color: var(--flatscha-blue);
     }
 
         .flatscha-alert.alert-info ::deep svg {
-            fill: var(--dionysys-blue);
+            fill: var(--flatscha-blue);
         }
 
     .flatscha-alert.alert-success {
@@ -40,21 +40,21 @@
         }
 
     .flatscha-alert.alert-warn {
-        background: var(--dionysys-orange-transparent);
-        color: var(--dionysys-orange);
+        background: var(--flatscha-orange-transparent);
+        color: var(--flatscha-orange);
     }
 
         .flatscha-alert.alert-warn ::deep svg {
-            fill: var(--dionysys-orange);
+            fill: var(--flatscha-orange);
         }
 
     .flatscha-alert.alert-error {
-        background: var(--dionysys-red-transparent);
-        color: var(--dionysys-red);
+        background: var(--flatscha-red-transparent);
+        color: var(--flatscha-red);
     }
 
         .flatscha-alert.alert-error ::deep svg {
-            fill: var(--dionysys-red);
+            fill: var(--flatscha-red);
         }
 
     .flatscha-alert .alert-text {
