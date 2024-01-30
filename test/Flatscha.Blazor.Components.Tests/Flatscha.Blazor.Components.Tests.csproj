@@ -36,10 +36,6 @@
 	  <ProjectReference Include="..\..\src\Flatscha.Blazor.Components\Flatscha.Blazor.Components.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Modal\" />
-	</ItemGroup>
-
 
 
 </Project>

@@ -10,5 +10,6 @@ namespace Flatscha.Blazor.Components.Modal.Interface
         Task Close(ModalReference? modalReference, ModalResult? result = null);
         Task Close(FlatschaModal? modal, ModalResult? result = null);
         Task Close(ModalResult? result = null);
+        Task CloseAll(ModalResult? result = null);
     }
 }

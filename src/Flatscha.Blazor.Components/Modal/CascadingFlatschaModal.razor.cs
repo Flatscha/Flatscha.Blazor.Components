@@ -2,6 +2,7 @@ using Flatscha.Blazor.Components.Contracts.Dto;
 using Flatscha.Blazor.Components.Modal.Dto;
 using Flatscha.Blazor.Components.Modal.Interface;
 using Microsoft.Extensions.Options;
+using System.Reflection.Metadata;
 
 namespace Flatscha.Blazor.Components.Modal
 {
@@ -82,6 +83,17 @@ namespace Flatscha.Blazor.Components.Modal
             modalReference.SetResult(result);
 
             this._modals.Remove(modalReference);
+            await InvokeAsync(StateHasChanged);
+        }
+
+        public async Task CloseAll(ModalResult? result = null)
+        {
+            foreach (var modalReference in this._modals)
+            {
+                modalReference.SetResult(result);
+            }
+
+            this._modals.Clear();
             await InvokeAsync(StateHasChanged);
         }
     }
