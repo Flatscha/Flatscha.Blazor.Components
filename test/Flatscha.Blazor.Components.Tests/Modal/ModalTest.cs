@@ -2,13 +2,12 @@
 using Flatscha.Blazor.Components.Contracts.Enum;
 using Flatscha.Blazor.Components.Modal;
 using Flatscha.Blazor.Components.Modal.Interface;
+using Flatscha.Blazor.Components.Tests.Base;
 
 namespace Flatscha.Blazor.Components.Tests.Modal
 {
-    public class ModalTest : TestContext
+    public class ModalTest : BaseComponentTest
     {
-        private readonly Fixture _fixture = new();
-
         private Mock<ICascadingFlatschaModal> _mockCascadingModal = new();
 
         public ModalTest()

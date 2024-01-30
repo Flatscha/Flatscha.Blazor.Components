@@ -2,11 +2,12 @@
 using Flatscha.Blazor.Components.Contracts.Enum;
 using Flatscha.Blazor.Components.General;
 using Flatscha.Blazor.Components.Modal;
+using Flatscha.Blazor.Components.Tests.Base;
 using System.Threading.Tasks;
 
 namespace Flatscha.Blazor.Components.Tests.Modal
 {
-    public class CascadingModalTest : TestContext
+    public class CascadingModalTest : BaseComponentTest
     {
         public CascadingModalTest()
         {

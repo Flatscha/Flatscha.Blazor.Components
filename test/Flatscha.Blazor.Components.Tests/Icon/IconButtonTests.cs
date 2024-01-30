@@ -1,8 +1,9 @@
 ﻿using Flatscha.Blazor.Components.Icon;
+using Flatscha.Blazor.Components.Tests.Base;
 
 namespace Flatscha.Blazor.Components.Tests.Icon
 {
-    public class IconButtonTests : TestContext
+    public class IconButtonTests : BaseComponentTest
     {
         public IconButtonTests()
         {

@@ -1,12 +1,11 @@
 ﻿using Flatscha.Blazor.Components.Contracts.Interfaces.Components;
+using Flatscha.Blazor.Components.Tests.Base;
 using Flatscha.Blazor.Components.ToolTip;
 
 namespace Flatscha.Blazor.Components.Tests.ToolTip
 {
-    public class ToolTipTests : TestContext
+    public class ToolTipTests : BaseComponentTest
     {
-        private readonly Fixture _fixture = new();
-
         private Mock<ICascadingFlatschaToolTip> _mockCascadingToolTip = new();
 
         public ToolTipTests()

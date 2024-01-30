@@ -1,11 +1,10 @@
 ﻿using Flatscha.Blazor.Components.General;
+using Flatscha.Blazor.Components.Tests.Base;
 
 namespace Flatscha.Blazor.Components.Tests.General
 {
-    public class SwitchTests : TestContext
+    public class SwitchTests : BaseComponentTest
     {
-        private readonly Fixture _fixture = new();
-
         public SwitchTests()
         {
         }

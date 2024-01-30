@@ -1,38 +1,13 @@
 ﻿
 using Flatscha.Blazor.Components.Pagination;
+using Flatscha.Blazor.Components.Tests.Base;
 
 namespace Flatscha.Blazor.Components.Tests.Pagination
 {
-    public class AccordionTests : TestContext
+    public class AccordionTests : BaseMultiChildComponentTest<FlatschaAccordionItem, FlatschaAccordion>
     {
-        private readonly Fixture _fixture = new();
-
         public AccordionTests()
         {
-        }
-
-        [Fact]
-        public void Create()
-        {
-            var accordion = RenderComponent<FlatschaAccordion>();
-
-            Assert.Empty(accordion.Instance.Items);
-
-            var accordionItemName1 = this._fixture.Create<string>();
-            var accordionItem1 = RenderComponent<FlatschaAccordionItem>(parameters =>
-            {
-                parameters.Add(p => p.Name, accordionItemName1);
-                parameters.AddCascadingValue(accordion.Instance);
-            });
-
-            var accordionItemName2 = this._fixture.Create<string>();
-            var accordionItem2 = RenderComponent<FlatschaAccordionItem>(parameters =>
-            {
-                parameters.Add(p => p.Name, accordionItemName2);
-                parameters.AddCascadingValue(accordion.Instance);
-            });
-
-            Assert.Equal(2, accordion.Instance.Items.Count);
         }
 
         [Fact]
@@ -40,23 +15,9 @@ namespace Flatscha.Blazor.Components.Tests.Pagination
         {
             FlatschaAccordionItem activeItem = null;
 
-            var accordion = RenderComponent<FlatschaAccordion>(parameters =>
+            var (accordion, accordionItem1, accordionItem2) = this.RenderParentWithChilds(parameters =>
             {
                 parameters.Add(p => p.ActiveItemChanged, (item) => activeItem = item);
-            });
-
-            var accordionItemName1 = this._fixture.Create<string>();
-            var accordionItem1 = RenderComponent<FlatschaAccordionItem>(parameters =>
-            {
-                parameters.Add(p => p.Name, accordionItemName1);
-                parameters.AddCascadingValue(accordion.Instance);
-            });
-
-            var accordionItemName2 = this._fixture.Create<string>();
-            var accordionItem2 = RenderComponent<FlatschaAccordionItem>(parameters =>
-            {
-                parameters.Add(p => p.Name, accordionItemName2);
-                parameters.AddCascadingValue(accordion.Instance);
             });
 
             var item1 = accordionItem1.Find(".flatscha-accordion-item-header");
