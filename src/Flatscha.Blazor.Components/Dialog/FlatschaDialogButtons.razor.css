@@ -1,0 +1,10 @@
+﻿.flatscha-dialog-buttons {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+    gap: 0.5rem;
+}
+
+    .flatscha-dialog-buttons > * {
+        flex: 1;
+    }

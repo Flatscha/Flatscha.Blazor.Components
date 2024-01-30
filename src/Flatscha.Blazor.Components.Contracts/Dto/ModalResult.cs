@@ -21,7 +21,8 @@ namespace Flatscha.Blazor.Components.Contracts.Dto
         public static ModalResult Yes(object? data = null) => new(EDialogResult.Yes, data);
         public static ModalResult No(object? data = null) => new(EDialogResult.No, data);
 
-        public bool IsSuccessful() => this.Result is EDialogResult.OK or EDialogResult.Yes;
+        public bool IsSuccessful => this.Result is EDialogResult.OK or EDialogResult.Yes;
+        public bool IsCanceled => this.Result is EDialogResult.Cancel;
 
         public bool TryGetData<T>(out T res)
         {
@@ -37,7 +38,7 @@ namespace Flatscha.Blazor.Components.Contracts.Dto
 
         public bool TryGetSuccessfulData<T>(out T res)
         {
-            if (!this.IsSuccessful())
+            if (!this.IsSuccessful)
             {
                 res = default;
                 return false;

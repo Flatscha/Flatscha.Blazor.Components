@@ -1,0 +1,40 @@
+﻿@using Flatscha.Blazor.Components.Contracts.Dto.Dialog
+
+<div class="flatscha flatscha-dialog-buttons">
+    @if (this.Buttons.Retry)
+    {
+        <button class="btn btn-primary" @onclick="this.Retry">Erneut versuchen</button>
+    }
+    @if (this.Buttons.OK)
+    {
+        <button class="btn btn-primary" @onclick="this.OK">OK</button>
+    }
+    @if (this.Buttons.Yes)
+    {
+        <button class="btn btn-primary" @onclick="this.Yes">Ja</button>
+    }
+    @if (this.Buttons.No)
+    {
+        <button class="btn btn-danger" @onclick="this.No">Nein</button>
+    }
+    @if (this.Buttons.Cancel)
+    {
+        <button class="btn btn-cancel" @onclick="this.Cancel">Abbrechen</button>
+    }
+    @if (this.Buttons.Ignore)
+    {
+        <button class="btn btn-cancel" @onclick="this.Ignore">Ignorieren</button>
+    }
+</div>
+
+@code {
+    [Parameter] public DialogButtonParameter Buttons { get; set; }
+    [Parameter] public EventCallback<EDialogResult> OnClick { get; set; }
+
+    private async Task OK() => await this.OnClick.InvokeAsync(EDialogResult.OK);
+    private async Task Cancel() => await this.OnClick.InvokeAsync(EDialogResult.Cancel);
+    private async Task Yes() => await this.OnClick.InvokeAsync(EDialogResult.Yes);
+    private async Task No() => await this.OnClick.InvokeAsync(EDialogResult.No);
+    private async Task Retry() => await this.OnClick.InvokeAsync(EDialogResult.Retry);
+    private async Task Ignore() => await this.OnClick.InvokeAsync(EDialogResult.Ignore);
+}
