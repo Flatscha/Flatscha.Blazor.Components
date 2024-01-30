@@ -22,14 +22,14 @@ namespace Flatscha.Blazor.Components.Tests.Pagination
             var accordionItem1 = RenderComponent<FlatschaAccordionItem>(parameters =>
             {
                 parameters.Add(p => p.Name, accordionItemName1);
-                parameters.Add(p => p.Parent, accordion.Instance);
+                parameters.AddCascadingValue(accordion.Instance);
             });
 
             var accordionItemName2 = this._fixture.Create<string>();
             var accordionItem2 = RenderComponent<FlatschaAccordionItem>(parameters =>
             {
                 parameters.Add(p => p.Name, accordionItemName2);
-                parameters.Add(p => p.Parent, accordion.Instance);
+                parameters.AddCascadingValue(accordion.Instance);
             });
 
             Assert.Equal(2, accordion.Instance.Items.Count);
@@ -49,14 +49,14 @@ namespace Flatscha.Blazor.Components.Tests.Pagination
             var accordionItem1 = RenderComponent<FlatschaAccordionItem>(parameters =>
             {
                 parameters.Add(p => p.Name, accordionItemName1);
-                parameters.Add(p => p.Parent, accordion.Instance);
+                parameters.AddCascadingValue(accordion.Instance);
             });
 
             var accordionItemName2 = this._fixture.Create<string>();
             var accordionItem2 = RenderComponent<FlatschaAccordionItem>(parameters =>
             {
                 parameters.Add(p => p.Name, accordionItemName2);
-                parameters.Add(p => p.Parent, accordion.Instance);
+                parameters.AddCascadingValue(accordion.Instance);
             });
 
             var item1 = accordionItem1.Find(".flatscha-accordion-item-header");

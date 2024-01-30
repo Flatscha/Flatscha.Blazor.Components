@@ -1,4 +1,6 @@
-﻿<div class="flatscha flatscha-accordion">
+﻿@inherits MultiChildComponentBase<FlatschaAccordionItem, FlatschaAccordion>
+
+<div class="flatscha flatscha-accordion">
     <CascadingValue Value="this">
         @this.ChildContent
     </CascadingValue>

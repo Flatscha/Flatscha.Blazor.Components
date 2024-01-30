@@ -1,4 +1,6 @@
-﻿<div class="flatscha-accordion-item  @(this.Parent.ActiveItem == this ? "active" : "")">
+﻿@inherits RegisterAtParentComponentBase<FlatschaAccordion, FlatschaAccordionItem>
+
+<div class="flatscha-accordion-item  @(this.Parent.ActiveItem == this ? "active" : "")">
     <div class="flatscha-accordion-item-header" @onclick="this.SetActive">
         <div class="flatscha-accordion-item-header-text">@this.Name</div>
         <FlatschaIconButton FAClass="angle-right" />
