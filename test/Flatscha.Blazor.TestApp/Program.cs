@@ -1,3 +1,4 @@
+using Flatscha.Blazor.Components.Contracts.Dto;
 using Flatscha.Blazor.TestApp.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.Configure<ModalOptions>(options =>
+{
+    options.CustomOverlayClass = "test";
+});
 
 var app = builder.Build();
 

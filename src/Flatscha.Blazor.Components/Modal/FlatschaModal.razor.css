@@ -1,0 +1,43 @@
+﻿.flatscha-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+    .flatscha-modal-overlay .flatscha-modal {
+        max-width: 80vw;
+        max-height: 80vh;
+        background: var(--flatscha-bg);
+        border: 1px solid var(--flatscha-primary-color);
+        border-radius: 0.5rem;
+        padding: 1rem;
+        margin: auto;
+        overflow: auto;
+    }
+
+        .flatscha-modal-overlay .flatscha-modal .flatscha-modal-header {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-gap: 1rem;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+            .flatscha-modal-overlay .flatscha-modal .flatscha-modal-header .flatscha-modal-title {
+                font-size: 2rem;
+                line-height: 2rem;
+            }
+
+            .flatscha-modal-overlay .flatscha-modal .flatscha-modal-header ::deep .flatscha-icon-button {
+                height: 2rem;
+            }
+
+        .flatscha-modal-overlay .flatscha-modal .flatscha-modal-content {
+        }

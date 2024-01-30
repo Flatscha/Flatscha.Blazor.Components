@@ -1,5 +1,5 @@
 ﻿.flatscha-alert {
-    width: 100%;
+    width: auto;
     display: grid;
     grid-template-columns: max-content auto;
     grid-gap: 1rem;

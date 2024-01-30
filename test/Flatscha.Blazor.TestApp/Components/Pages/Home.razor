@@ -7,16 +7,4 @@
 
 Welcome to your new app.
 
-<FlatschaAccordion>
-    <FlatschaAccordionItem Name="Test">
-        erstes
-    </FlatschaAccordionItem>
-    <FlatschaAccordionItem Name="Test2">
-        zweites
-    </FlatschaAccordionItem>
-</FlatschaAccordion>
-
-@code {
-    private string _icon = "house";
-    private void ChangeIcon() => this._icon = this._icon == "house" ? "user" : "house";
-}
+<button @onclick="this.OpenModal">Modal</button>

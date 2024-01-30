@@ -1,0 +1,20 @@
+﻿<div class="flatscha flatscha-modal-overlay @this.Options?.CustomOverlayClass" @onclick="this.CancelAsync">
+    <div class="flatscha-modal @this.Options?.CustomClass">
+        @if (!this.Options?.HideHeader ?? true)
+        {
+            <div class="flatscha-modal-header">
+                <div class="flatscha-modal-title">@this.Title</div>
+
+                @if (!this.Options?.HideCloseButton ?? true)
+                {
+                    <FlatschaIconButton FAClass="xmark" OnClick="this.CancelAsync" />
+                }
+            </div>
+        }
+        <div class="flatscha-modal-content">
+            <CascadingValue Value="this" IsFixed="true">
+                @this.ChildContent
+            </CascadingValue>
+        </div>
+    </div>
+</div>

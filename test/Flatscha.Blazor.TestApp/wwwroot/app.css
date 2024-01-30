@@ -1,6 +1,7 @@
 html {
     background: var(--flatscha-bg);
     color: var(--flatscha-font-color);
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .blazor-error-boundary {
