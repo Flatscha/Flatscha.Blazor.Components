@@ -1,0 +1,12 @@
+﻿@inherits RegisterAtParentComponentBase<FlatschaWizard, FlatschaWizardStep>
+
+@if (this.Parent.ActiveItem == this)
+{
+    <div class="flatscha flatscha-wizard-step">
+        @if (this.WithHeader)
+        {
+            <div class="flatscha-wizard-step-header">@this.Name</div>
+        }
+        <div class="flatscha-wizard-step-content">@this.ChildContent</div>
+    </div>
+}

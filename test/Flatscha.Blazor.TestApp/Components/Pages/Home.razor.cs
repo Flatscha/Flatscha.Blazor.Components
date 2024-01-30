@@ -12,6 +12,8 @@ namespace Flatscha.Blazor.TestApp.Components.Pages
         private string _icon = "house";
         private void ChangeIcon() => this._icon = this._icon == "house" ? "user" : "house";
 
+        private string StepError() => this._icon == "house" ? "UserIcon required" : null;
+
         private async Task OpenModal()
         {
             var reference = this._modal.Open<TestModalContent>("Test Modal 2",

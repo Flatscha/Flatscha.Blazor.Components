@@ -1,0 +1,35 @@
+﻿@inherits MultiChildComponentBase<FlatschaWizardStep, FlatschaWizard>
+
+<div class="flatscha flatscha-wizard">
+    <div class="flatscha-wizard-nav">
+        @foreach (var item in this.Items)
+        {
+            <div class="flatscha-wizard-nav-step-container @(this.ActiveItem == item ? "active" : "")" @onclick="() => this.SetActiveItem(item)">
+                <div class="flatscha-wizard-nav-step">
+                    @item.Name
+                </div>
+            </div>
+        }
+    </div>
+    <div class="flatscha-wizard-content">
+        <CascadingValue Value="this">
+            @this.ChildContent
+        </CascadingValue>
+    </div>
+    <div class="flatscha-wizard-controls">
+        @if (this.Items.FirstOrDefault() != this.ActiveItem)
+        {
+            <button class="btn btn-cancel" @onclick="this.Back">@this.BackText</button>
+        }
+
+        @if (this.Items.LastOrDefault() != this.ActiveItem)
+        {
+            <button class="btn btn-primary" @onclick="this.Next">@this.NextText</button>
+        }
+        else
+        {
+            <button class="btn btn-primary" @onclick="this.SubmitForm">@this.SubmitText</button>
+        }
+    </div>
+</div>
+

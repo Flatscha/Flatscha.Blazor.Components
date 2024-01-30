@@ -1,5 +1,7 @@
 ﻿@page "/"
+@using Flatscha.Blazor.Components.Contracts.Enum
 @using Flatscha.Blazor.Components.Loading
+@using Flatscha.Blazor.Components.Wizard
 @rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
@@ -10,3 +12,13 @@ Welcome to your new app.
 
 <button @onclick="this.OpenModal">Modal</button>
 <button @onclick="this.Load">Load</button>
+
+<FlatschaWizard>
+    <FlatschaWizardStep Name="Step 1" StepError="this.StepError">
+        <FlatschaAlert Level="EAlertLevel.Info">This is Step 1</FlatschaAlert>
+        <FlatschaIconButton FAClass="@this._icon" OnClick="this.ChangeIcon" />
+    </FlatschaWizardStep>
+    <FlatschaWizardStep Name="Step 2">
+        <FlatschaAlert Level="EAlertLevel.Warning">This is Step 2</FlatschaAlert>
+    </FlatschaWizardStep>
+</FlatschaWizard>
