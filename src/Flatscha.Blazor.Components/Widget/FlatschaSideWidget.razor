@@ -1,0 +1,6 @@
+﻿@inherits RegisterAtParentComponentBase<CascadingFlatschaSideWidget, FlatschaSideWidget>
+
+<div class="flatscha flatscha-side-widget @(this.Active ? "active" : "")" style="--child-index: @this._childIndex; --widget-width: @(this.OpenedWidth)rem; --widget-height: @(this.OpenedHeight)rem">
+    <FlatschaIconButton FAClass="@this.FAClass" OnClick="this.Toggle" />
+    <div class="widget-content">@this.ChildContent</div>
+</div>

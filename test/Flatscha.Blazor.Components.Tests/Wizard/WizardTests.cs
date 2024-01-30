@@ -1,5 +1,4 @@
-﻿using Bunit;
-using Flatscha.Blazor.Components.Tests.Base;
+﻿using Flatscha.Blazor.Components.Tests.Base;
 using Flatscha.Blazor.Components.Wizard;
 using System.Linq;
 

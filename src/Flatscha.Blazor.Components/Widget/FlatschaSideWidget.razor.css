@@ -1,0 +1,50 @@
+﻿.flatscha-side-widget {
+    --child-index: 0;
+    --widget-button-size: 2rem;
+    --widget-button-padding: 0.5rem;
+    --widget-button-total-size: calc(var(--widget-button-size) + var(--widget-button-padding) * 2);
+    --widget-width: 20rem;
+    --widget-height: 40rem;
+    position: fixed;
+    right: 0;
+    top: calc(var(--child-index) * calc(var(--widget-button-total-size) + 0.5rem) + 0.5rem);
+    width: var(--widget-button-size);
+    height: var(--widget-button-size);
+    padding: var(--widget-button-padding);
+    background-color: var(--flatscha-bg);
+    border: 1px solid var(--flatscha-primary-color);
+    border-right: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    overflow: scroll;
+    z-index: 105;
+    transition: all 1s ease-in-out;
+}
+
+    .flatscha-side-widget::-webkit-scrollbar {
+        display: none;
+    }
+
+    .flatscha-side-widget ::deep > .flatscha-icon-button {
+        width: var(--widget-button-size);
+        aspect-ratio: 1 / 1;
+        transition: transform 1s ease-in-out;
+        transform: rotateZ(0deg);
+        margin-bottom: 0.5rem;
+    }
+
+    .flatscha-side-widget .widget-content {
+    }
+
+    .flatscha-side-widget.active {
+        width: var(--widget-width);
+        height: var(--widget-height);
+        z-index: 106;
+    }
+
+        .flatscha-side-widget.active ::deep > .flatscha-icon-button {
+            transform-origin: center;
+            transform: rotateZ(-180deg);
+        }
+
+        .flatscha-side-widget.active .widget-content {
+        }
