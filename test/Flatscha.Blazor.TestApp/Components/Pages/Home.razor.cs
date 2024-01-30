@@ -1,6 +1,7 @@
 using Flatscha.Blazor.Components.Modal.Interface;
 using Flatscha.Blazor.TestApp.Components.Modal;
 using Microsoft.AspNetCore.Components;
+using Flatscha.Blazor.Components.Extensions;
 
 namespace Flatscha.Blazor.TestApp.Components.Pages
 {
@@ -22,6 +23,15 @@ namespace Flatscha.Blazor.TestApp.Components.Pages
 
             var res = await reference.Result;
             var res2 = await reference2.Result;
+        }
+
+        private async Task Load()
+        {
+            var modal = this._modal.OpenLoading();
+
+            await Task.Delay(5000);
+
+            await modal.Close();
         }
     }
 }

@@ -1,0 +1,129 @@
+﻿
+.flatscha-loading-prompt {
+    display: grid;
+    height: max-content;
+    width: 100%;
+    --size: 20rem;
+    --columns: 4;
+    --square-size: calc((var(--size)/var(--columns)));
+}
+
+    .flatscha-loading-prompt.centered {
+        align-items: center;
+        justify-content: center;
+    }
+
+.square-container {
+    width: calc(var(--size) / var(--columns) * calc(var(--columns) - 0.1));
+    aspect-ratio: var(--columns)/calc(calc(var(--columns) - 0.1) / 2);
+}
+
+    .square-container .square {
+        position: absolute;
+        width: calc(var(--square-size)*0.9);
+        aspect-ratio: 1/1;
+        border-radius: calc(var(--size)*0.03);
+        background-color: var(--color);
+        box-shadow: 0 0 0.2em 0.05em var(--dionysys-bg);
+        animation: slide 12s ease infinite;
+    }
+
+        .square-container .square:nth-child(1) {
+            --color: blue;
+            animation-delay: 0s;
+        }
+
+        .square-container .square:nth-child(2) {
+            --color: yellow;
+            animation-delay: -2s;
+        }
+
+        .square-container .square:nth-child(3) {
+            --color: red;
+            animation-delay: -4s;
+        }
+
+        .square-container .square:nth-child(4) {
+            --color: green;
+            animation-delay: -6s;
+        }
+
+        .square-container .square:nth-child(5) {
+            --color: purple;
+            animation-delay: -8s;
+        }
+
+        .square-container .square:nth-child(6) {
+            --color: teal;
+            animation-delay: -10s;
+        }
+
+@keyframes slide {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    2% {
+        transform: translate(calc(1*var(--square-size)), 0);
+    }
+
+    11% {
+        transform: translate(calc(1*var(--square-size)), 0);
+    }
+
+    13% {
+        transform: translate(calc(2*var(--square-size)), 0);
+    }
+
+    24% {
+        transform: translate(calc(2*var(--square-size)), 0);
+    }
+
+    26% {
+        transform: translate(calc(3*var(--square-size)), 0);
+    }
+
+    37% {
+        transform: translate(calc(3*var(--square-size)), 0);
+    }
+
+    39% {
+        transform: translate(calc(3*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    50% {
+        transform: translate(calc(3*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    52% {
+        transform: translate(calc(2*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    63% {
+        transform: translate(calc(2*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    65% {
+        transform: translate(calc(1*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    76% {
+        transform: translate(calc(1*var(--square-size)), calc(1*var(--square-size)));
+    }
+
+    78% {
+        transform: translate(0, calc(1*var(--square-size)));
+    }
+
+    89% {
+        transform: translate(0, calc(1*var(--square-size)));
+    }
+
+    91% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}

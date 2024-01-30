@@ -1,0 +1,15 @@
+﻿<div class="flatscha flatscha-loading-prompt @(this.Centered ? "centered" : "")" style="--size: @this.Width">
+    <div class="square-container">
+        <div class="square" />
+        <div class="square" />
+        <div class="square" />
+        <div class="square" />
+        <div class="square" />
+        <div class="square" />
+    </div>
+</div>
+
+@code {
+    [Parameter] public bool Centered { get; set; } = false;
+    [Parameter] public string Width { get; set; } = "20rem";
+}
