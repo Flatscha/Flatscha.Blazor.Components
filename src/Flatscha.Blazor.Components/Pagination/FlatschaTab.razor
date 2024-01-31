@@ -1,0 +1,12 @@
+﻿@inherits RegisterAtParentComponentBase<FlatschaTabControl, FlatschaTab>
+
+@if (this.Parent.ActiveItem == this)
+{
+    <div class="flatscha flatscha-tab">
+        @this.ChildContent
+    </div>
+}
+
+@code {
+    [Parameter] public string Header { get; set; }
+}

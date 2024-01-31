@@ -84,3 +84,8 @@
             color: var(--flatscha-font-color) !important;
             fill: var(--flatscha-font-color) !important;
         }
+
+    .flatscha hr {
+        margin: 0;
+        opacity: 0.25;
+    }

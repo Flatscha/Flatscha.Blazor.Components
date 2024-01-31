@@ -13,15 +13,15 @@ Welcome to your new app.
 <button @onclick="this.OpenModal">Modal</button>
 <button @onclick="this.Load">Load</button>
 
-<FlatschaWizard>
-    <FlatschaWizardStep Name="Step 1" StepError="this.StepError">
-        <FlatschaAlert Level="EAlertLevel.Info">This is Step 1</FlatschaAlert>
+<FlatschaTabControl>
+    <FlatschaTab Header="Tab 1">
+        <FlatschaAlert Level="EAlertLevel.Info">This is Tab 1</FlatschaAlert>
         <FlatschaIconButton FAClass="@this._icon" OnClick="this.ChangeIcon" />
-    </FlatschaWizardStep>
-    <FlatschaWizardStep Name="Step 2">
-        <FlatschaAlert Level="EAlertLevel.Warning">This is Step 2</FlatschaAlert>
-    </FlatschaWizardStep>
-</FlatschaWizard>
+    </FlatschaTab>
+    <FlatschaTab Header="Tab 2">
+        <FlatschaAlert Level="EAlertLevel.Warning">This is Tab 2</FlatschaAlert>
+    </FlatschaTab>
+</FlatschaTabControl>
 
 <FlatschaSideWidget>
     <FlatschaAlert Level="EAlertLevel.Error">First Widget</FlatschaAlert>

@@ -1,0 +1,57 @@
+﻿
+.flatscha-tab-control {
+    --tab-height: 3rem;
+}
+
+    .flatscha-tab-control .flatscha-tab-control-nav {
+        display: flex;
+        height: var(--tab-height);
+        overflow: scroll;
+        white-space: nowrap;
+        padding-bottom: 0.25rem;
+    }
+
+        .flatscha-tab-control .flatscha-tab-control-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .flatscha-tab-control .flatscha-tab-control-nav .flatscha-tab-control-nav-tab {
+            position: relative;
+            background-color: transparent;
+            color: var(--flatscha-font-color);
+            height: 3rem;
+            border-radius: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: var(--tab-height);
+            padding-left: 2rem;
+            padding-right: 2rem;
+            margin-right: 0.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+            .flatscha-tab-control .flatscha-tab-control-nav .flatscha-tab-control-nav-tab:hover {
+                background-color: var(--flatscha-font-color-transparent);
+            }
+
+            .flatscha-tab-control .flatscha-tab-control-nav .flatscha-tab-control-nav-tab.active {
+                color: white;
+            }
+
+                .flatscha-tab-control .flatscha-tab-control-nav .flatscha-tab-control-nav-tab.active::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0.25rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 80%;
+                    height: 0.2rem;
+                    border-radius: 100%;
+                    background-color: var(--flatscha-primary-color);
+                }
+
+    .flatscha-tab-control hr {
+        margin: 0;
+        margin-bottom: 0.5rem;
+    }

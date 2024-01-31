@@ -38,6 +38,7 @@
                 display: grid;
                 align-items: center;
                 justify-items: center;
+                user-select: none;
             }
 
                 .flatscha-wizard .flatscha-wizard-nav .flatscha-wizard-nav-step-container .flatscha-wizard-nav-step::before,

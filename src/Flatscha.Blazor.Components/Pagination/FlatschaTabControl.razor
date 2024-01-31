@@ -1,0 +1,16 @@
+﻿@inherits MultiChildComponentBase<FlatschaTab, FlatschaTabControl>
+
+<div class="flatscha flatscha-tab-control">
+    <div class="flatscha-tab-control-nav">
+        @foreach (var item in this.Items)
+        {
+            <div class="flatscha-tab-control-nav-tab @(this.ActiveItem == item ? "active" : "" )" @onclick="() => this.SetActiveItem(item)">
+                @item.Header
+            </div>
+        }
+    </div>
+    <hr />
+    <CascadingValue Value="this">
+        @this.ChildContent
+    </CascadingValue>
+</div>
