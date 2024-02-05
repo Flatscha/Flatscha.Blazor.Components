@@ -6,6 +6,16 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<IsPackable>true</IsPackable>
+		<Authors>Flatscha</Authors>
+		<Owners>Flatscha</Owners>
+		<RepositoryUrl>https://github.com/Flatscha/Flatscha.Blazor.Components.git</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageProjectUrl>https://github.com/Flatscha/Flatscha.Blazor.Components.git</PackageProjectUrl>
+		<Description>Contracts for UI Library for Blazor</Description>
+	</PropertyGroup>
+	
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.1" />
 	</ItemGroup>
