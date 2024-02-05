@@ -7,10 +7,6 @@ on:
 
 env:
   NuGetDirectory: ${{ github.workspace }}/nuget
-  
-defaults:
-  run:
-    shell: pwsh
 
 jobs:
   pack:
@@ -61,6 +57,7 @@ jobs:
       - name: Setup .NET Core
         uses: actions/setup-dotnet@v4
       - name: Nuget Push
+        shell: pwsh
         run: |
           foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.nupkg)) {
               dotnet nuget push $file --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
