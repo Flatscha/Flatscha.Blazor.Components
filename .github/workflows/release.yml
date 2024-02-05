@@ -47,5 +47,6 @@ jobs:
     - name: Nuget Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --property:PackageOutputPath=../../
     - name: Nuget Push
-      run: dotnet nuget push Flatscha.Blazor.Components.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
-      run: dotnet nuget push Flatscha.Blazor.Components.Contracts.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+      run: |
+        dotnet nuget push Flatscha.Blazor.Components.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
+        dotnet nuget push Flatscha.Blazor.Components.Contracts.${VERSION}.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate
