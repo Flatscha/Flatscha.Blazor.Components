@@ -20,9 +20,11 @@ jobs:
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
     - name: Build
       run: dotnet build --configuration Release /p:Version=${VERSION}
+    outputs:
+     RUNNER: ${{ runner.name }}
 
   Test:
-    runs-on: ubuntu-latest
+    runs-on: ${{needs.Build.outputs.RUNNER}}
     needs: [ Build ]
     steps:
     - uses: actions/checkout@v3
@@ -34,7 +36,7 @@ jobs:
       run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
 
   Nuget:
-    runs-on: ubuntu-latest
+    runs-on: ${{needs.Build.outputs.RUNNER}}
     needs: [ Build, Test ]
     steps:
     - uses: actions/checkout@v3

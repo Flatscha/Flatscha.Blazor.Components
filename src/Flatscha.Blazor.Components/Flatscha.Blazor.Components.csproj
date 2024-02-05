@@ -28,4 +28,9 @@
 		<ProjectReference Include="..\Flatscha.Blazor.Components.Contracts\Flatscha.Blazor.Components.Contracts.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="">
+			<Link>Properties\README.md</Link>
+		</None>
+	</ItemGroup>
 </Project>
