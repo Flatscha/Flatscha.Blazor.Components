@@ -4,10 +4,14 @@
 
 <h3>TestModalContent</h3>
 
+<InputDate @bind-Value="this._date" />
+
 <button class="btn btn-primary" @onclick="this.Submit">OK</button>
 
 @code {
     [CascadingParameter] private ICascadingFlatschaModal _modal { get; set; } = default!;
+
+    private DateTime? _date = null;
 
     private async Task Submit() => await this._modal.Close(ModalResult.Ok(5));
 }

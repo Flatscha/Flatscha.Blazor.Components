@@ -1,5 +1,5 @@
 ﻿<div class="flatscha flatscha-modal-overlay @this.Options?.CustomOverlayClass" @onclick="this.CancelAsync">
-    <div class="flatscha-modal @this.Options?.CustomClass">
+    <div class="flatscha-modal @this.Options?.CustomClass" @onclick:stopPropagation="true">
         @if (!this.Options?.HideHeader ?? true)
         {
             <div class="flatscha-modal-header">

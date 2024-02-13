@@ -21,10 +21,8 @@ namespace Flatscha.Blazor.TestApp.Components.Pages
                         {
                             options.CustomOverlayClass = "test2";
                         });
-            var reference2 = this._modal.Open<TestModalContent>("Test Modal");
 
             var res = await reference.Result;
-            var res2 = await reference2.Result;
         }
 
         private async Task Load()
