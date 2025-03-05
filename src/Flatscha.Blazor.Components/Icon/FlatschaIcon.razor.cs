@@ -1,13 +1,16 @@
 
+using Flatscha.Blazor.Components.Contracts.Interfaces.Services;
+
 namespace Flatscha.Blazor.Components.Icon
 {
     public partial class FlatschaIcon
     {
+        [Inject] private IDefaultIconService _defaultIconService { get; set; }
+
         private string _faClass = "question";
 
-        private const string FontAwesomeFile = $"_content/Flatscha.Blazor.Components/css/fontawesome.svg";
-
-        [Parameter(CaptureUnmatchedValues = true)] public Dictionary<string, object> AllOtherAttributes { get; set; }
+        [Parameter(CaptureUnmatchedValues = true)]
+        public Dictionary<string, object> AllOtherAttributes { get; set; }
 
         [Parameter, EditorRequired]
         public string FAClass
@@ -17,8 +20,19 @@ namespace Flatscha.Blazor.Components.Icon
             {
                 if (string.IsNullOrWhiteSpace(value)) { return; }
 
-                this._faClass = value.StartsWith("fa-") ? value.Replace("fa-", "") : value;
+                if (value.StartsWith("fa-"))
+                {
+                    this._faClass = value.Replace("fa-", "");
+                }
+                else
+                {
+                    this._faClass = value;
+                }
             }
         }
+
+        [Parameter] public EIconStyle? Style { get; set; } = null;
+
+        private EIconStyle GetStyle() => this.Style ?? this._defaultIconService.Style;
     }
 }

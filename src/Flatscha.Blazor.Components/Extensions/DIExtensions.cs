@@ -14,6 +14,8 @@ namespace Flatscha.Blazor.Components.Extensions
             services.AddScoped<IProtecedLocalStorageHandler, ProtecedLocalStorageHandler>();
             services.AddScoped<IFavoriteHandler, FavoriteHandler>();
 
+            services.AddSingleton<IDefaultIconService>(sp => new DefaultIconService(EIconStyle.Solid));
+
             return services;
         }
     }
