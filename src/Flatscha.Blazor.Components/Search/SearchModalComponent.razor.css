@@ -1,0 +1,30 @@
+﻿.search-modal-component ::deep .search-container .search-results-container .search-item {
+    grid-template-columns: auto max-content;
+    grid-gap: 0 0.5rem;
+}
+
+.search-item-name {
+    font-weight: 600;
+    flex-grow: 1;
+}
+
+.search-item-sub {
+    grid-row: 2;
+}
+
+.search-item-favorite {
+}
+
+    .search-item-favorite ::deep svg {
+        float: right;
+        fill: var(--flatscha-yellow);
+        height: 1.25em;
+    }
+
+    .search-item-favorite.empty ::deep svg {
+        fill: var(--flatscha-font-color);
+    }
+
+.search-modal-component ::deep .search-item:has(.search-item-sub) .search-item-favorite {
+    grid-row-end: span 2;
+}

@@ -1,0 +1,14 @@
+﻿<div class="search-item @(string.IsNullOrEmpty(this.FaClass) ? "no-icon" : string.Empty)" @onclick="@this.OnClick">
+    @if (!string.IsNullOrEmpty(this.FaClass))
+    {
+        <FlatschaIcon FAClass="@this.FaClass" />
+    }
+    @if (!string.IsNullOrEmpty(this.Title))
+    {
+        <div class="title">@this.Title</div>
+    }
+    @if (!string.IsNullOrEmpty(this.Text))
+    {
+        <div class="description">@this.Text</div>
+    }
+</div>

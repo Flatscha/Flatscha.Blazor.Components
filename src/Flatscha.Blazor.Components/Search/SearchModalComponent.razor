@@ -1,0 +1,20 @@
+﻿@typeparam TItem
+@typeparam TFavoriteObject
+
+<div class="search-modal-component">
+    <SearchComponent Items="@this.Items.OrderByDescending(this.IsFavorite).ThenBy(x => this.DisableOrder ? string.Empty : this.GetName(x))" OnSelected="this.OnSelected" TItem="TItem" SearchExpression="this.Search" Placeholder="@this.Placeholder">
+        <ItemTemplate>
+            <div class="search-item-name">@this.GetName(context)</div>
+            @if (this.Sub is not null && !string.IsNullOrWhiteSpace(this.Sub(context)))
+            {
+                <div class="search-item-sub">@this.Sub(context)</div>
+            }
+            @if (this.FavoriteKey is not null)
+            {
+                <div class="search-item-favorite @(this.IsFavorite(context) ? "": "empty")" @onclick:stopPropagation>
+                    <FlatschaIcon FAClass="star" @onclick="async () => await this.ToggleFavorite(context)" />
+                </div>
+            }
+        </ItemTemplate>
+    </SearchComponent>
+</div>

@@ -1,0 +1,4 @@
+﻿.search-item-list {
+    display: grid;
+    grid-gap: 0.5rem;
+}

@@ -1,0 +1,28 @@
+﻿
+.search-item {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    grid-gap: 0 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.2rem 0.05rem #101010;
+    background: var(--flatscha-primary-color-gradient);
+}
+
+    .search-item.no-icon {
+        grid-template-columns: auto;
+    }
+
+    .search-item ::deep svg {
+        grid-row-end: span 2;
+        font-size: 2rem;
+    }
+
+    .search-item .title {
+    }
+
+    .search-item .description {
+        font-size: 0.75rem;
+    }

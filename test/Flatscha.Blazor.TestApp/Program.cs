@@ -1,5 +1,6 @@
 using Flatscha.Blazor.Components.Contracts.Dto;
 using Flatscha.Blazor.TestApp.Components;
+using Flatscha.Blazor.Components.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.Configure<ModalOptions>(options =>
 {
     options.CustomOverlayClass = "test";
 });
+
+builder.Services.AddFlatschaUtilities();
 
 var app = builder.Build();
 

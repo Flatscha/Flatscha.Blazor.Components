@@ -1,0 +1,11 @@
+﻿<div class="search-item-list">
+    @foreach (var item in this.Items)
+    {
+        <SearchItemComponent OnClick="async () => await this.Click(item)"
+                             Title="@item.Title"
+                             Text="@item.Description"
+                             FaClass="@item.FAClass" />
+    }
+</div>
+
+

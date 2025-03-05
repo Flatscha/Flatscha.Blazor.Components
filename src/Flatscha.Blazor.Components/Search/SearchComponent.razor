@@ -1,0 +1,26 @@
+﻿@typeparam TItem
+
+<div class="search-container">
+    <input type="text" placeholder="@(this.Placeholder ?? "Suchen")" @oninput="this.OnValueChanged" />
+
+    <div class="search-results-container">
+        @if (this.Items is null || !this.Items.Any())
+        {
+            <FlatschaAlert Level="@EAlertLevel.Info">Keine Einträge vorhanden</FlatschaAlert>
+        }
+        else if (!this._result.Any())
+        {
+            <FlatschaAlert Level="@EAlertLevel.Info">Keine Einträge gefunden</FlatschaAlert>
+        }
+        else
+        {
+            @foreach (var item in this._result)
+            {
+                <div class="search-item" @onclick="@(() => this.OnSelected.InvokeAsync(item))">
+                    @this.ItemTemplate(item)
+                </div>
+                <hr />
+            }
+        }
+    </div>
+</div>
