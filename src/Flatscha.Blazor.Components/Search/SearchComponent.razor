@@ -15,7 +15,7 @@
         else
         {
             @foreach (var item in this._result)
-            {
+            { 
                 <div class="search-item" @onclick="@(() => this.OnSelected.InvokeAsync(item))">
                     @this.ItemTemplate(item)
                 </div>
