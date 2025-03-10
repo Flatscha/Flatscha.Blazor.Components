@@ -2,6 +2,7 @@
 @using Flatscha.Blazor.Components.Contracts.Enum
 @using Flatscha.Blazor.Components.Loading
 @using Flatscha.Blazor.Components.Wizard
+@using Microsoft.Extensions.Logging
 @rendermode InteractiveServer
 
 <PageTitle>Home</PageTitle>
@@ -12,6 +13,10 @@ Welcome to your new app.
 
 <button @onclick="this.ShowSearchItemModal">SearchItemModal</button>
 <button @onclick="this.ShowSearchModal">SearchModal</button>
+
+<FlatschaTabs Values="this._actions" @bind-Value="this._activeAction" Header="x => x.Title" MessageCounter="x => 500001" MaxMessageCounter="50" >
+    @this._activeAction.Description
+</FlatschaTabs>
 
 <FlatschaTabControl>
     <FlatschaTab Header="Tab 1">

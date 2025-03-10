@@ -1,0 +1,26 @@
+﻿@typeparam T
+
+@if (this.Values is null) { return; }
+
+<div class="flatscha flatscha-tab-control">
+    <div class="flatscha-tab-control-nav">
+        @foreach (var tab in this.Values)
+        {
+            <div class="flatscha-tab-control-nav-tab @(tab?.Equals(this.Value) ?? false ? "active" : "" )" @onclick="() => this.TabClicked(tab)">
+                @this.Header(tab)
+
+                <FlatschaMessageCounter Counter="this.MessageCounter?.Invoke(tab) ?? 0" MaxMessageCounter="this.MaxMessageCounter" MessageLevel="this.MessageLevel" />
+            </div>
+        }
+    </div>
+    <hr />
+
+    @if (this.Value is null)
+    {
+        <FlatschaAlert Level="EAlertLevel.Info">Kein Tab ausgewählt</FlatschaAlert>
+    }
+    else
+    {
+        @this.ChildContent(this.Value)
+    }
+</div>

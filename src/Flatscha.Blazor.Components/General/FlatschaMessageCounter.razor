@@ -1,0 +1,14 @@
+﻿@if (this.Counter <= 0) { return; }
+
+<div class="flatscha-message-counter @this.MessageLevel.GetLevelClass()">
+    @if (this.MaxMessageCounter > 0 && this.Counter > this.MaxMessageCounter)
+    {
+        @(this.MaxMessageCounter)
+
+        <text>+</text>
+    }
+    else
+    {
+        @this.Counter
+    }
+</div>

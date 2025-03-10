@@ -13,6 +13,28 @@ namespace Flatscha.Blazor.TestApp.Components.Pages
         [CascadingParameter] private ICascadingFlatschaModal _modal { get; set; }
 
         private string _icon = "house";
+
+        private SearchItemDto _activeAction;
+        private List<SearchItemDto> _actions =
+            [
+                new () {
+                    Title = "Bearbeiten",
+                    Description = "Aktionen kann bearbeitet werden",
+                    FAClass = "pen",
+                },
+                new () {
+                    Title = "Löschen",
+                    Description = "Aktionen kann gelöscht werden",
+                    FAClass = "trash-can",
+                },
+                new()
+                {
+                    Title = "Starten",
+                    Description = "Aktionen kann gestartet werden",
+                    FAClass = "play",
+                },
+            ];
+
         private void ChangeIcon() => this._icon = this._icon == "house" ? "user" : "house";
 
         private string StepError() => this._icon == "house" ? "UserIcon required" : null;
@@ -39,28 +61,9 @@ namespace Flatscha.Blazor.TestApp.Components.Pages
 
         private async Task ShowSearchItemModal()
         {
-            var actions = new List<SearchItemDto>
-            {
-                new() {
-                    Title = "Bearbeiten",
-                    Description = "Aktionen kann bearbeitet werden",
-                    FAClass = "pen",
-                },
-                new() {
-                    Title = "Löschen",
-                    Description = "Aktionen kann gelöscht werden",
-                    FAClass = "trash-can",
-                },
-                new() {
-                    Title = "Starten",
-                    Description = "Aktionen kann gestartet werden",
-                    FAClass = "play",
-                },
-            };
-
             var parameters = new ModalParameters
             {
-                { nameof(SearchItemListComponent.Items), actions }
+                { nameof(SearchItemListComponent.Items), this._actions }
             };
 
             var modal = this._modal.Open<SearchItemListComponent>("Aktionen", parameters);

@@ -1,0 +1,46 @@
+﻿
+.flatscha-message-counter {
+    position: absolute;
+    top: 0;
+    right: 0.1rem;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--flatscha-primary-color);
+    height: 1rem;
+    width: max-content;
+    min-width: 1rem;
+    padding: 0.25rem;
+    font-size: 0.5rem;
+    line-height: 0.5rem;
+    border-radius: 0.5rem;
+    filter: drop-shadow(0 0 0.1rem var(--flatscha-yellow));
+    transition: all 0.5s ease;
+}
+
+    .flatscha-message-counter.trace {
+        background: transparent;
+    }
+
+    .flatscha-message-counter.debug {
+        background: var(--flatscha-orange);
+        color: var(--flatscha-font-color-alternate);
+    }
+
+    .flatscha-message-counter.info {
+        background-color: var(--flatscha-primary-color);
+    }
+
+    .flatscha-message-counter.warn {
+        background: var(--flatscha-yellow);
+        color: var(--flatscha-font-color-alternate);
+    }
+
+    .flatscha-message-counter.error {
+        background: var(--flatscha-red);
+    }
+
+    .flatscha-message-counter.fatal {
+        background: var(--flatscha-red);
+    }
