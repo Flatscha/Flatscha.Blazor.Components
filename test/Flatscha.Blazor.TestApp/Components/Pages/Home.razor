@@ -13,8 +13,10 @@ Welcome to your new app.
 
 <button @onclick="this.ShowSearchItemModal">SearchItemModal</button>
 <button @onclick="this.ShowSearchModal">SearchModal</button>
+<button @onclick="async() => await this._iconPrompt.Show(true)">IconPrompt - Success</button>
+<button @onclick="async() => await this._iconPrompt.Show(false)">IconPrompt - Fail</button>
 
-<FlatschaTabs Values="this._actions" @bind-Value="this._activeAction" Header="x => x.Title" MessageCounter="x => 500001" MaxMessageCounter="50" >
+<FlatschaTabs Values="this._actions" @bind-Value="this._activeAction" Header="x => x.Title" MessageCounter="x => 500001" MaxMessageCounter="50">
     @this._activeAction.Description
 </FlatschaTabs>
 

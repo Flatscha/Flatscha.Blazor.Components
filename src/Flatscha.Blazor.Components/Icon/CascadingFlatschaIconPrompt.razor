@@ -1,0 +1,13 @@
+﻿@using Flatscha.Blazor.Components.Base
+@inherits JSModuleComponent
+
+<CascadingValue Value="this" IsFixed="true">
+    @this.ChildContent
+</CascadingValue>
+
+<div class="flatscha flatscha-icon-prompt @this._colorClass" @ref="this._wrapper">
+    @if (!string.IsNullOrWhiteSpace(this._faClass))
+    {
+        <FlatschaIcon FAClass="@this._faClass" />
+    }
+</div>

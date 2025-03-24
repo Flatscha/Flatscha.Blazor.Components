@@ -5,12 +5,14 @@ using Flatscha.Blazor.Components.Extensions;
 using Flatscha.Blazor.Components.Contracts.Dto.Search;
 using Flatscha.Blazor.Components.Contracts.Dto;
 using Flatscha.Blazor.Components.Search;
+using Flatscha.Blazor.Components.Icon;
 
 namespace Flatscha.Blazor.TestApp.Components.Pages
 {
     public partial class Home
     {
         [CascadingParameter] private ICascadingFlatschaModal _modal { get; set; }
+        [CascadingParameter] private CascadingFlatschaIconPrompt _iconPrompt { get; set; }
 
         private string _icon = "house";
 

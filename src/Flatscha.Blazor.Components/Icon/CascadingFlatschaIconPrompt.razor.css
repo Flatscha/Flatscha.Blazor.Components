@@ -1,0 +1,60 @@
+﻿
+.flatscha-icon-prompt {
+    --color: var(--flatscha-primary-color);
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 25rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: var(--color);
+    z-index: 101;
+    display: none;
+}
+
+    .flatscha-icon-prompt.flip-icon-prompt {
+        display: initial;
+        animation: flip 1s cubic-bezier(0.455, 0.030, 0.515, 0.955), 0.3s fly-away 1.2s ease-in forwards;
+    }
+
+    .flatscha-icon-prompt ::deep svg {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 75%;
+        fill: white;
+    }
+
+    .flatscha-icon-prompt.successful {
+        --color: var(--flatscha-green);
+    }
+
+    .flatscha-icon-prompt.unsuccessful {
+        --color: var(--flatscha-red);
+    }
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0);
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+@keyframes fly-away {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(-50rem) scale(0.1);
+    }
+}
