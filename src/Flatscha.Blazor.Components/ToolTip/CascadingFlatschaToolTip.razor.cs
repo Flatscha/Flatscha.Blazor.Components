@@ -1,17 +1,14 @@
+using Flatscha.Blazor.Components.Base;
 using Microsoft.JSInterop;
 
 namespace Flatscha.Blazor.Components.ToolTip
 {
-    public partial class CascadingFlatschaToolTip : ComponentBase, IAsyncDisposable, ICascadingFlatschaToolTip
+    public partial class CascadingFlatschaToolTip : JSModuleComponent, IAsyncDisposable, ICascadingFlatschaToolTip
     {
-        [Inject] private IJSRuntime _js { get; set; } = default!;
-
         [Parameter] public RenderFragment? ChildContent { get; set; }
 
         private RenderFragment? _toolTipContent = null;
         private string? _text = null;
-
-        private IJSObjectReference _jsModule;
 
         private ElementReference? _wrapper;
         private ElementReference _toolTip;
@@ -21,18 +18,13 @@ namespace Flatscha.Blazor.Components.ToolTip
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
-            if (firstRender)
-            {
-                this._jsModule = await this._js.InvokeAsync<IJSObjectReference>("import", $"./_content/{this.GetType().Assembly.GetName().Name}/ToolTip/{nameof(CascadingFlatschaToolTip)}.razor.js");
-            }
+            await base.OnAfterRenderAsync(firstRender);
 
             if (this._correctToolTipPosition && this._wrapper.HasValue)
             {
                 this._correctToolTipPosition = false;
                 await this._jsModule.InvokeVoidAsync("positionFlatschaToolTip", this._wrapper.Value, this._toolTip);
             }
-
-            await base.OnAfterRenderAsync(firstRender);
         }
 
         public async Task ShowToolTip(ElementReference reference, RenderFragment? content = null, string? text = null)
@@ -55,20 +47,6 @@ namespace Flatscha.Blazor.Components.ToolTip
             this._correctToolTipPosition = false;
 
             await this.InvokeAsync(StateHasChanged);
-        }
-
-        public async ValueTask DisposeAsync()
-        {
-            try
-            {
-                if (this._jsModule is not null)
-                {
-                    await this._jsModule.DisposeAsync();
-                }
-            }
-            catch (JSDisconnectedException)
-            {
-            }
         }
     }
 }
