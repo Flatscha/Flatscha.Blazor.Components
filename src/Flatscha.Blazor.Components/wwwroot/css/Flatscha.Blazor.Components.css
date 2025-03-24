@@ -1,12 +1,16 @@
 ﻿
 * {
     /*Colors*/
-    --flatscha-primary-color: rgb(16, 100, 0);
-    --flatscha-primary-color-transparent: rgba(16, 100, 0, 0.1);
-    --flatscha-primary-color-gradient: linear-gradient(to right, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
-    --flatscha-primary-color-gradient-left: linear-gradient(to left, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
+    --flatscha-primary-color: var(--flatscha-green);
+    --flatscha-primary-color-transparent: var(--flatscha-green-transparent);
+    --flatscha-primary-color-gradient: var(--flatscha-green-gradient);
+    --flatscha-primary-color-gradient-left: var(--flatscha-green-gradient-left);
     --flatscha-primary-color-box-shadow: 0 0 0.5em var(--flatscha-primary-color);
     --flatscha-color-scheme: dark;
+    --flatscha-green: rgb(16, 100, 0);
+    --flatscha-green-transparent: rgba(16, 100, 0, 0.1);
+    --flatscha-green-gradient: linear-gradient(to right, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
+    --flatscha-green-gradient-left: linear-gradient(to left, transparent 0%, var(--flatscha-primary-color-transparent) 10%, var(--flatscha-primary-color) 90%);
     --flatscha-red: rgb(150, 0, 0);
     --flatscha-red-gradient: linear-gradient(to right, transparent 0%, var(--flatscha-red-transparent) 10%, var(--flatscha-red) 90%);
     --flatscha-red-gradient-left: linear-gradient(to left, transparent 0%, var(--flatscha-red-transparent) 10%, var(--flatscha-red) 90%);
