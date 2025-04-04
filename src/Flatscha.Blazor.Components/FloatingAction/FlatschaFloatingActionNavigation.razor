@@ -1,0 +1,14 @@
+﻿@inherits MultiChildComponentBase<FlatschaFloatingActionButton, FlatschaFloatingActionNavigation>
+
+<div class="flatscha fab-navigation @(this._showNavigation ? "" : "hide") @(this._showActions ? "active" : string.Empty)" @onclick="@this.Toggle">
+    <div class="flatscha fab-navigation-control">
+        <FlatschaIconButton FAClass="ellipsis-vertical" />
+    </div>
+    <div class="flatscha fab-navigation-content">
+        <CascadingValue Value="this">
+            @this.ChildContent
+        </CascadingValue>
+    </div>
+</div>
+
+

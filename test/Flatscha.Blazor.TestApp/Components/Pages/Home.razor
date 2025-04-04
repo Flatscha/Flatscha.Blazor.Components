@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Flatscha.Blazor.Components.Contracts.Enum
+@using Flatscha.Blazor.Components.FloatingAction
 @using Flatscha.Blazor.Components.Loading
 @using Flatscha.Blazor.Components.Wizard
 @using Microsoft.Extensions.Logging
@@ -36,3 +37,9 @@ Welcome to your new app.
 <FlatschaSideWidget>
     <FlatschaAlert Level="EAlertLevel.Warning">Second Widget</FlatschaAlert>
 </FlatschaSideWidget>
+
+<FlatschaFloatingActionNavigation>
+    <FlatschaFloatingActionButton FAClass="user" />
+    <FlatschaFloatingActionButton FAClass="location-dot" Title="Standort" />
+    <FlatschaFloatingActionButton FAClass="music" />
+</FlatschaFloatingActionNavigation>

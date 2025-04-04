@@ -25,6 +25,8 @@ namespace Flatscha.Blazor.Components.Base.MultiChild
             if (this._items.Contains(child)) { return; }
 
             this._items.Add(child);
+
+            this.InvokeAsync(StateHasChanged);
         }
 
         public void Remove(TChild child) => this._items.Remove(child);

@@ -1,0 +1,21 @@
+﻿.fab-action-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    align-items: center;
+}
+
+    .fab-action-container .fab-title {
+    }
+
+    .fab-action-container .fab-icon {
+    }
+
+        .fab-action-container .fab-icon ::deep .icon-button {
+            --icon-button-size: var(--floating-action-button-size);
+            border-radius: calc(var(--floating-action-button-size) / 2);
+            box-shadow: 0 0 0.2rem 0.1rem var(--flatscha-font-color);
+        }
+
+            .fab-action-container .fab-icon ::deep .icon-button svg {
+            }

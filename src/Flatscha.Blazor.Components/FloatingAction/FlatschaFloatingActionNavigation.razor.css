@@ -1,0 +1,61 @@
+﻿.fab-navigation,
+.fab-navigation::deep * {
+    --floating-action-navigation-size: 3rem;
+    --floating-action-button-size: 3rem;
+}
+
+.fab-navigation {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: max-content;
+    width: max-content;
+    background-color: transparent;
+    padding: 1rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: end;
+}
+
+    .fab-navigation.hide {
+        display: none;
+    }
+
+    .fab-navigation .fab-navigation-control {
+    }
+
+        .fab-navigation .fab-navigation-control ::deep .icon-button {
+            --icon-button-size: var(--floating-action-navigation-size);
+            border-radius: calc(var(--floating-action-navigation-size) / 2);
+            box-shadow: 0 0 0.2rem 0.1rem var(--flatscha-font-color);
+        }
+
+    .fab-navigation .fab-navigation-content {
+        display: none;
+    }
+
+    .fab-navigation.active {
+        height: 100%;
+        width: 100%;
+        max-width: none;
+        background-color: rgba(0,0,0,0.5);
+        transition: background-color 0.2s linear
+    }
+
+        .fab-navigation.active .fab-navigation-control {
+            transform: scale(0.9) rotateZ(180deg);
+        }
+
+        .fab-navigation.active .fab-navigation-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: .5rem;
+        }
+
+.fab-navigation,
+.fab-navigation-control,
+.fab-navigation-content {
+    transition: transform 0.35s ease-in-out;
+}

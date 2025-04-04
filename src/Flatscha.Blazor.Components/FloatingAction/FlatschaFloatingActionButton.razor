@@ -1,0 +1,13 @@
+﻿@inherits RegisterAtParentComponentBase<FlatschaFloatingActionNavigation, FlatschaFloatingActionButton>
+
+<div class="flatscha fab-action-container @this.CssClass" @onclick="@this.OnClick">
+    @if (!string.IsNullOrEmpty(this.Title))
+    {
+        <div class="flatscha fab-title">@this.Title</div>
+    }
+    <div class="flatscha fab-icon">
+        <FlatschaIconButton FAClass="@this.FAClass" />
+    </div>
+</div>
+
+
