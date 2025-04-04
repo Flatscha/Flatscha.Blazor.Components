@@ -7,10 +7,6 @@ namespace Flatscha.Blazor.Components.FloatingAction
         private bool _showActions = false;
         private bool _showNavigation => this.Show && this.Items.Any();
 
-        public async Task Toggle()
-        {
-            this._showActions = !this._showActions;
-            await this.InvokeAsync(StateHasChanged);
-        }
+        public void Toggle() => this._showActions = !this._showActions;
     }
 }
