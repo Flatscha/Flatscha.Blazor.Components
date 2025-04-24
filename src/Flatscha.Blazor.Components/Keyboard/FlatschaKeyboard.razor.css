@@ -61,7 +61,7 @@
         }
 
             .flatscha-keyboard .flatscha-keyboard-key.shift.shifted {
-                background-color: var(--flatscha-primary-color-semi-transparent);
+                background-color: var(--flatscha-primary-color);
             }
 
         .flatscha-keyboard .flatscha-keyboard-key.space {
