@@ -1,6 +1,7 @@
 ﻿
 var fontAwesomeFiles = {
-    0: '_content/Flatscha.Blazor.Components/css/fontawesome.svg',
+    0: '_content/Flatscha.Blazor.Components/css/fontawesome/fontawesome.svg',
+    1: '_content/Flatscha.Blazor.Components/css/fontawesome/customIcons.svg',
 };
 
 var xmlFiles = {};
@@ -47,6 +48,12 @@ function loadSpecificIcon(iconName, node, style) {
     if (typeof content === 'undefined' || content === null) {
         content = xmlFiles[0].getElementById(iconName);
         node.setAttribute('fontawesome-style-not-found', '');
+    }
+
+    if (content === null && iconName == 'question') { return; }
+    if (content === null) {
+        loadSpecificIcon('question', node, style);
+        return;
     }
 
     var path = content.innerHTML;

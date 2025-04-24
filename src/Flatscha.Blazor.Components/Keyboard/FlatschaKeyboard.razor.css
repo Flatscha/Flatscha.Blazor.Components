@@ -1,0 +1,87 @@
+﻿.flatscha-keyboard {
+    --keyboard-key-size: calc(var(--keyboard-font-size) * 2.2);
+    --keyboard-font-size: 2rem;
+    --keyboard-bottom: 1rem;
+    --keyboard-half-key-size: calc(1.5 * var(--keyboard-key-size) + 0.25rem);
+    position: fixed;
+    bottom: var(--keyboard-bottom);
+    left: 0;
+    right: 0;
+    margin: auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0.5rem;
+    background: var(--flatscha-bg);
+    border: 1px solid var(--flatscha-primary-color);
+    border-radius: 1rem;
+    width: max-content;
+    z-index: 999;
+    display: none;
+}
+
+    .flatscha-keyboard.active,
+    .flatscha-keyboard.always-active {
+        display: flex;
+        animation: blend-in 0.3s ease-out forwards;
+    }
+
+    .flatscha-keyboard.always-active {
+        position: initial;
+        margin: unset;
+        z-index: unset;
+        animation: none;
+    }
+
+    .flatscha-keyboard .flatscha-keyboard-line {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .flatscha-keyboard .flatscha-keyboard-key {
+        width: var(--keyboard-key-size);
+        height: var(--keyboard-key-size);
+        min-width: max-content;
+        font-size: var(--keyboard-font-size);
+        line-height: var(--keyboard-font-size);
+        background-color: var(--flatscha-primary-color-transparent);
+        border: 1px solid var(--flatscha-primary-color);
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        box-shadow: 0.05rem 0.2rem var(--flatscha-primary-color);
+    }
+
+        .flatscha-keyboard .flatscha-keyboard-key:hover {
+            transform: translateY(calc(var(--keyboard-key-size) * 0.05));
+        }
+
+        .flatscha-keyboard .flatscha-keyboard-key.shift {
+            width: var(--keyboard-half-key-size);
+        }
+
+            .flatscha-keyboard .flatscha-keyboard-key.shift.shifted {
+                background-color: var(--flatscha-primary-color-semi-transparent);
+            }
+
+        .flatscha-keyboard .flatscha-keyboard-key.space {
+            width: calc(5 * var(--keyboard-key-size));
+        }
+
+        .flatscha-keyboard .flatscha-keyboard-key.enter {
+            width: var(--keyboard-half-key-size);
+        }
+
+        .flatscha-keyboard .flatscha-keyboard-key.return {
+            width: var(--keyboard-half-key-size);
+        }
+
+@keyframes blend-in {
+    0% {
+        transform: translateY(calc(100% + calc(2 * var(--keyboard-bottom))));
+    }
+
+    100% {
+        transform: none;
+    }
+}

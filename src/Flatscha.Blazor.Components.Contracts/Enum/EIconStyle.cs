@@ -3,5 +3,6 @@
     public enum EIconStyle
     {
         Solid,
+        Custom,
     }
 }

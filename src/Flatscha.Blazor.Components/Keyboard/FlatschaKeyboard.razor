@@ -1,0 +1,36 @@
+﻿@using Flatscha.Blazor.Components.Base
+@inherits JSModuleComponent
+
+<div class="flatscha-keyboard @(this.AlwaysActive ? "active always-active" : "")" @ref="this._keyboard">
+    @this.ChildContent
+
+    @foreach (var line in this._keys)
+    {
+        <div class="flatscha-keyboard-line">
+            @foreach (var key in line)
+            {
+                <div class="flatscha-keyboard-key" @onclick="async () => await this.KeyPressed(key)">
+                    @this.GetShiftedKey(key)
+                </div>
+            }
+        </div>
+    }
+    <div class="flatscha-keyboard-line">
+        @if (this.Type is not EKeyboardType.Numpad
+        && this.Type is not EKeyboardType.Keys)
+        {
+            <div class="flatscha-keyboard-key shift @(this._shift ? "shifted" : "")" @onclick="this.ShiftPressed">
+                <FlatschaIcon FAClass="arrow-up" />
+            </div>
+            <div class="flatscha-keyboard-key space" @onclick="@(async () => await this.KeyPressed(" "))" />
+        }
+
+        <div class="flatscha-keyboard-key return" @onclick="this.ReturnPressed">
+            <FlatschaIcon FAClass="arrow-left" />
+        </div>
+
+        <div class="flatscha-keyboard-key enter" @onclick="this.EnterPressed">
+            <FlatschaIcon FAClass="turn-down-left" Style="EIconStyle.Custom" />
+        </div>
+    </div>
+</div>

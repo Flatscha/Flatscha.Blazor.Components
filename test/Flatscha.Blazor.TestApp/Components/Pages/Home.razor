@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using Flatscha.Blazor.Components.Contracts.Enum
 @using Flatscha.Blazor.Components.FloatingAction
+@using Flatscha.Blazor.Components.Keyboard
 @using Flatscha.Blazor.Components.Loading
 @using Flatscha.Blazor.Components.Wizard
 @using Microsoft.Extensions.Logging
@@ -16,6 +17,11 @@ Welcome to your new app.
 <button @onclick="this.ShowSearchModal">SearchModal</button>
 <button @onclick="async() => await this._iconPrompt.Show(true)">IconPrompt - Success</button>
 <button @onclick="async() => await this._iconPrompt.Show(false)">IconPrompt - Fail</button>
+
+
+<textarea class="flatscha-keyboard-input" />
+<textarea class="flatscha-keyboard-input" />
+<FlatschaKeyboard Type="EKeyboardType.Numpad" />
 
 <FlatschaTabs Values="this._actions" @bind-Value="this._activeAction" Header="x => x.Title" MessageCounter="x => 500001" MaxMessageCounter="50">
     @this._activeAction.Description
